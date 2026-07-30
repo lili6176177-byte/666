@@ -1,0 +1,413 @@
+:root {
+  --theme-primary: #4f46e5;
+  --theme-primary-hover: #4338ca;
+  --theme-secondary: #0ea5e9;
+  --theme-success: #10b981;
+  --theme-warning: #f59e0b;
+  --theme-danger: #ef4444;
+  --theme-info: #6366f1;
+  --theme-bg-page: #f1f5f9;
+  --theme-bg-card: #ffffff;
+  --theme-bg-sidebar: #0f172a;
+  --theme-bg-header: #ffffff;
+  --theme-text-primary: #0f172a;
+  --theme-text-secondary: #475569;
+  --theme-text-muted: #94a3b8;
+  --theme-border: #e2e8f0;
+  --theme-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --theme-radius: 12px;
+  --theme-font: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--theme-font);
+  background: var(--theme-bg-page);
+  color: var(--theme-text-primary);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+/* 主题动画预设 */
+@keyframes theme-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes theme-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes theme-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes theme-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes theme-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes theme-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.72;
+  }
+}
+
+@keyframes theme-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-4px);
+  }
+  40%,
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes theme-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--theme-primary) 40%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 20px 4px color-mix(in srgb, var(--theme-primary) 35%, transparent);
+  }
+}
+
+/* ---------- 按键特效动画 ---------- */
+@keyframes theme-ripple-spread {
+  to {
+    transform: scale(28);
+    opacity: 0;
+  }
+}
+
+@keyframes theme-btn-bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.9);
+  }
+  55% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes theme-btn-scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes theme-btn-shine {
+  0% {
+    background-position: -120% 0;
+  }
+  100% {
+    background-position: 220% 0;
+  }
+}
+
+@keyframes theme-btn-press {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 4px 0 color-mix(in srgb, var(--theme-primary) 35%, #000);
+  }
+  50% {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--theme-primary) 35%, #000);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 0 color-mix(in srgb, var(--theme-primary) 35%, #000);
+  }
+}
+
+@keyframes theme-btn-glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--theme-primary) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 18px 4px color-mix(in srgb, var(--theme-primary) 40%, transparent);
+  }
+}
+
+@keyframes theme-btn-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes theme-btn-jelly {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes theme-btn-flash {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  40% {
+    filter: brightness(1.45);
+  }
+}
+
+/* 按键特效类（挂在 Themeable 上） */
+.theme-btn--ripple {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.theme-btn--bounce:active {
+  animation: theme-btn-bounce 0.45s ease;
+}
+
+.theme-btn--scale {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.theme-btn--scale:hover {
+  transform: scale(1.03);
+}
+.theme-btn--scale:active {
+  animation: theme-btn-scale 0.28s ease;
+}
+
+.theme-btn--shine {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background-image: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 45%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+}
+.theme-btn--shine:hover {
+  animation: theme-btn-shine 0.9s ease;
+}
+
+.theme-btn--press {
+  cursor: pointer;
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--theme-primary) 35%, #000);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.theme-btn--press:active {
+  animation: theme-btn-press 0.28s ease;
+}
+
+.theme-btn--glow {
+  cursor: pointer;
+}
+.theme-btn--glow:hover,
+.theme-btn--glow:active {
+  animation: theme-btn-glow-pulse 1s ease infinite;
+}
+
+.theme-btn--float {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.theme-btn--float:hover {
+  animation: theme-btn-float 1.2s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.theme-btn--jelly:active {
+  animation: theme-btn-jelly 0.5s ease;
+}
+
+.theme-btn--flash:active {
+  animation: theme-btn-flash 0.35s ease;
+}
+
+/* 编辑模式全局提示光标 */
+body.theme-edit-mode {
+  cursor: crosshair;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--theme-text-muted) 50%, transparent);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 边框动画：直接作用在元素自身的 border-color / box-shadow 上 */
+@keyframes theme-border-pulse {
+  0%,
+  100% {
+    border-color: var(--theme-border-anim-color, currentColor);
+  }
+  50% {
+    border-color: color-mix(
+      in srgb,
+      var(--theme-border-anim-color, currentColor) 25%,
+      transparent
+    );
+  }
+}
+
+@keyframes theme-border-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0
+      color-mix(in srgb, var(--theme-border-anim-color, #6366f1) 0%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 14px 3px
+      color-mix(in srgb, var(--theme-border-anim-color, #6366f1) 55%, transparent);
+  }
+}
+
+@keyframes theme-border-blink {
+  0%,
+  45%,
+  100% {
+    border-color: var(--theme-border-anim-color, currentColor);
+  }
+  50%,
+  95% {
+    border-color: transparent;
+  }
+}
+
+@keyframes theme-border-dash {
+  0% {
+    border-color: var(--theme-border-anim-color, currentColor);
+  }
+  50% {
+    border-color: color-mix(
+      in srgb,
+      var(--theme-border-anim-color, currentColor) 35%,
+      #fff
+    );
+  }
+  100% {
+    border-color: var(--theme-border-anim-color, currentColor);
+  }
+}
+
+@keyframes theme-border-flow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* 虚线流动时强制虚线边框 */
+.theme-border--dash {
+  border-style: dashed !important;
+}
